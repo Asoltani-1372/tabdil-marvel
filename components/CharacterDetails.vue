@@ -1,5 +1,9 @@
 <template>
+    <div class="flex h-16 w-16 ml-10">
+                <img src="/assets/images/marvel.svg" alt="marvel">
+        </div>
     <div class="characterContainer flex ml-10 pt-10 pb-10 custom-gradient">
+        
         <div class=" w-1/6 characterImgContainer ">
             <img :src="`${CharacterDetails.data.results[0].thumbnail.path}.${CharacterDetails.data.results[0].thumbnail.extension}`"
                 alt="Image" class="h-64 w-64 object-cover">
