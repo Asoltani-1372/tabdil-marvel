@@ -83,32 +83,44 @@ import CryptoJS from 'crypto-js'
 let currentPage = ref(1)
 const searchQuery = ref('');
 let showPagination = ref(true)
+const ShowExistSearches = ref(true)
 const publicKey = process.env.MARVEL_PUBLIC_KEY || "01b7cd1063a56ef1b5b7f22d39e41a97"
 const privateKey = process.env.MARVEL_PRIVATE_KEY || "8bb180165fbcbe71e7c8cbe80293c0fd245e5fc2"
 
 const ts = Date.now().toString()
 const hash = CryptoJS.MD5(`${ts}${privateKey}${publicKey}`).toString()
-const url = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=12}`
+const InitialUrl = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&ts=${ts}&hash=${hash}&limit=12}`
 
 // Data Fetching
 const { data: characters  } = await useAsyncData(
-    () => $fetch(url, {
+    () => $fetch(InitialUrl, {
         query: { offset: (currentPage.value -1) * 12  }
     }), {
     watch: [currentPage ]
 }
 )
-const onSubmit = () => {
-    if (searchQuery && searchQuery.value.length > 2) {
-        const getSearchData = async () => {
+const getSearchData = async (url ,search) => {
+            if (search) {
+                url = `${url}&nameStartsWith=${searchQuery.value}`
+            }
             characters.value = await  $fetch(url, {
-                query: { nameStartsWith: searchQuery.value, limit: 100 }
             })
         }
-        getSearchData()
+
+const onSubmit = () => {
+    if (searchQuery && searchQuery.value.length > 0) {
+        
+        getSearchData(InitialUrl , "search")
         showPagination.value = false
+        ShowExistSearches.value = true
     }
-}
+    else {
+        getSearchData(InitialUrl) 
+        ShowExistSearches.value = false
+        showPagination.value = true
+    }
+    }
+
 
 
 //Computed PRoperties

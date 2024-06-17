@@ -2,7 +2,10 @@
 
     <!-- Add additional elements here if needed, like a button or icon -->
     <div v-if="character" class="bg-gray-800 min-h-screen">
+        // Hero
         <CharacterDetails :CharacterDetails="character" />
+        // CharacterComic
+
         <div class="comicContainer mt-3">
             <div class="h-32">
                 <div class="h-20"></div>
@@ -15,6 +18,7 @@
                 </div>
             </div>
         </div>
+        // CharacterSeries
         <div v-if="characterSeries" class="bg-gray-800">
 
             <div class="seriesContainer">
