@@ -1,10 +1,10 @@
 <template>
 
     <!-- Add additional elements here if needed, like a button or icon -->
-    <div v-if="character" class="bg-gray-800 min-h-screen">
-        // Hero
+    <div v-if="character" class="backGroundColorHome min-h-screen">
+        <!-- // Hero -->
         <CharacterDetails :CharacterDetails="character" />
-        // CharacterComic
+         <!-- CharacterComic -->
 
         <div class="comicContainer mt-3">
             <div class="h-32">
@@ -18,8 +18,8 @@
                 </div>
             </div>
         </div>
-        // CharacterSeries
-        <div v-if="characterSeries" class="bg-gray-800">
+        <!-- // CharacterSeries -->
+        <div v-if="characterSeries" class="backGroundColorHome">
 
             <div class="seriesContainer">
                 <div class="h-32">
@@ -86,5 +86,9 @@ const { data: characterSeries } = await useFetch(urlSeries, {
       var(--gradient-end) 50%, 
       var(--gradient-end) 100%
     );
+}
+
+.backGroundColorHome {
+    background-color : #2C2E30;
 }
 </style>

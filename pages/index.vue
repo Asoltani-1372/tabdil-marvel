@@ -1,17 +1,20 @@
 <template>
 
-    <div v-if="characters" class="bg-gray-800 min-h-screen">
+    <div v-if="characters" class="backGroundColorHome min-h-screen">
+
         <div class="searchContainer h-40 custom-gradient  content-center justify-self-center text text-center px-14	 ">
-            <div class="px-4 py-2 h-18 rounded-md w-11/12 mx-auto mt-7 flex flex-row	justify-between searchinputOuter-bg {
-">
+            <div class="img h-16 w-16 ml-20 mb-2">
+                <img src="/assets/images/marvel.svg" alt="marvel">
+            </div>
+            <div class="px-4 py-2 h-18 rounded-md w-11/12 mx-auto mt- flex flex-row justify-between  searchinputOuter-bg">
                 <input v-model="searchQuery" type="text"
-                    placeholder="Search for character..." class="w-11/12 searchinput-bg pl-2 ml-2 text-white" />
+                    placeholder="Search for character..." class="w-11/12 searchinput-bg pl-2  text-white" />
                 <button
-                @click="onSubmit" class="text-white bg-red-500 hover:bg-red-700 py-2 px-4 rounded flex items-center justify-between">
+                @click="onSubmit" type="submit" class="text-white bg-red-500 hover:bg-red-700 py-2 px-4 rounded flex items-center justify-between">
                     <i class="bx bx-search 2xl text-2xl w-1/5 mr-2 text-white"></i>
                     search</button>
             </div>
-
+ 
             <!-- <ClientOnly>
                 <div  bg-red-100 " v-if="searchResultcomp && showResults"
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 px-20 h-full mr-10 ml-10 mt-10 ">
@@ -220,5 +223,9 @@ function closeContainer() {
 }
 .searchinputOuter-bg {
     background-color:#2C2E30 ;
+}
+
+.backGroundColorHome {
+    background-color : #2C2E30;
 }
 </style>

@@ -11,15 +11,15 @@
             </h6>
             <div class="heroBtnContainer flex ">
                 <button
-                    class="bg-transparent text-gray-500 mr-1 rounded-md hover:text-gray-700 px1 p-2 mt-2 flex  justify-center border border-white">
+                    class="bg-transparent text-gray-400 mr-1 rounded-md hover:text-gray-700 px1 p-2 mt-2 flex  justify-center border border-white">
                     <i class="bx bx-right-top-arrow-circle mr-2"></i> Detail
                 </button>
                 <button
-                    class="bg-transparent text-gray-500 mx-1 rounded-md hover:text-gray-700 px1 p-2 mt-2 flex justify-center border border-white">
+                    class="bg-transparent text-gray-400 mx-1 rounded-md hover:text-gray-600 px1 p-2 mt-2 flex justify-center border border-white">
                     <i class="bx bx-right-top-arrow-circle mr-2"></i> Wiki
                 </button>
                 <button
-                    class="bg-transparent text-gray-500 mx-1 rounded-md hover:text-gray-700 px1 p-2 mt-2 flex  justify-center border border-white">
+                    class="bg-transparent text-gray-400 mx-1 rounded-md hover:text-gray-700 px1 p-2 mt-2 flex  justify-center border border-white">
                     <i class="bx bx-right-top-arrow-circle mr-2"></i> Comiclink
                 </button>
             </div>
