@@ -3,9 +3,12 @@
 </script>
 
 <template>
-  <NuxtLayout />
+  <div class="bg-red">
+    <NuxtLayout />
     <NuxtPage />
 
+  </div>
+  
 </template>
 
 <style></style>

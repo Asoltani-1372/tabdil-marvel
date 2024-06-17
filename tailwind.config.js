@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  theme: {},
-  plugins: [],
-  darkMode : true,
+  theme: {
+    extend: {
+      colors: {
+        searchInput: '#3B3D3F',
+        customBlue: {
+          600: '#003D44',
+        },
+      },
+    },
+  },  plugins: [],
+  darkMode : false,
   content: [
     `${srcDir}/components/**/*.{vue,js,ts}`,
     `${srcDir}/layouts/**/*.vue`,
